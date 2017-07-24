@@ -40,7 +40,7 @@ hrApp.service('EmployeeService', ['$http', 'CommonResourcesFactory', function($h
                     });
             },
             delete: function(employeeId) {
-                return $http.delete(CommonResourcesFactory.deleteEmployeeUrl, {params: {'employeeId': employeeId}})
+                return $http.delete(CommonResourcesFactory.deleteEmployeeUrl,{params: {'employeeId': employeeId}})
                     .success(function(data) {
                         return data;
                     })

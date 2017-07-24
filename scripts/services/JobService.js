@@ -1,47 +1,47 @@
 'use strict';
 
-hrApp.service('JobService', ['$http', 'CommonResourcesFactory', function($http, CommonResourcesFactory) {
+hrApp.service('JobService', ['$http', 'CommonResourcesFactory', function ($http, CommonResourcesFactory) {
     return {
-        findAll: function() {
+        findAll: function () {
             return $http.get(CommonResourcesFactory.findAllJobsUrl)
-                .success(function(data) {
+                .success(function (data) {
                     return data;
-                }).error(function(data) {
-                    return data;
-            });
-        },
-        findOne: function(jobId) {
-            return $http.get(CommonResourcesFactory.findOneJobUrl + jobId)
-                .success(function(data) {
-                    return data;
-                }).error(function(data) {
+                }).error(function (data) {
                     return data;
                 });
         },
-        add: function(job) {
+        findOne: function (jobId) {
+            return $http.get(CommonResourcesFactory.findOneJobUrl, {params: {'jobId': jobId}})
+                .success(function (data) {
+                    return data;
+                }).error(function (data) {
+                    return data;
+                });
+        },
+        add: function (job) {
             return $http.post(CommonResourcesFactory.addJobUrl, job)
-                .success(function(data) {
+                .success(function (data) {
                     return data;
                 })
-                .error(function(data) {
+                .error(function (data) {
                     return data;
                 });
         },
-        edit: function(job) {
+        edit: function (job) {
             return $http.put(CommonResourcesFactory.editJobUrl, job)
-                .success(function(data) {
+                .success(function (data) {
                     return data;
                 })
-                .error(function(data) {
+                .error(function (data) {
                     return data;
                 });
         },
-        delete: function(jobId) {
-            return $http.delete(CommonResourcesFactory.deleteJobUrl + '/' + jobId)
-                .success(function(data) {
+        delete: function (jobId) {
+            return $http.delete(CommonResourcesFactory.deleteJobUrl, {params: {'jobId': jobId}})
+                .success(function (data) {
                     return data;
                 })
-                .error(function(data) {
+                .error(function (data) {
                     return data;
                 });
         }

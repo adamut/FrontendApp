@@ -25,7 +25,7 @@ hrApp.controller('EmployeeListController', ['$scope', '$http', '$route', '$locat
             $location.url('/employeeEdit/' + employeeId);
         };
 
-        /**
+        /**F
          * Delete an employee
          * @param employeeId - identifier of the employee to be deleted
          */
